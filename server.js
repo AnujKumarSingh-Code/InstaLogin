@@ -6,6 +6,8 @@ dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
+let accessToken = '';
+let userId='';
 
 app.get('/', (req, res) => {
   res.send(`
@@ -16,51 +18,33 @@ app.get('/', (req, res) => {
   `);
 });
 
-app.get('/callback', async (req, res) => {
+app.get('/auth', async (req, res) => {
   const code = req.query.code;
 
-  if (!code) {
-    return res.send('No code provided');
-  }
+  const tokenResponse = await axios.post('https://api.instagram.com/oauth/access_token', new URLSearchParams({
+    client_id: process.env.IG_CLIENT_ID,
+    client_secret: process.env.IG_CLIENT_SECRET,
+    grant_type: 'authorization_code',
+    redirect_uri: process.env.IG_REDIRECT_URI,
+    code: code,
+  }), {
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    }
+  });
 
-  try {
-    const tokenResponse = await axios.post('https://api.instagram.com/oauth/access_token', null, {
-      params: {
-        client_id: process.env.IG_CLIENT_ID,
-        client_secret: process.env.IG_CLIENT_SECRET,
-        grant_type: 'authorization_code',
-        redirect_uri: process.env.IG_REDIRECT_URI,
-        code: code,
-      },
-    });
+  console.log(tokenResponse);
+  
+    accessToken = tokenResponse.data.access_token;
+    userId = tokenResponse.data.user_id;
+    res.send(`<h1>Access Token</h1><p>${accessToken}</p><h1>User ID</h1><p>${userId}</p>`);
 
-    const accessToken = tokenResponse.data.access_token;
-    const userId = tokenResponse.data.user_id;
 
-    res.send(`
-      <h1>Access Token</h1>
-      <p>${accessToken}</p>
-      <h1>User ID</h1>
-      <p>${userId}</p>
-    `);
-  } catch (error) {
-    console.error('Error getting access token:', error);
-    res.send('Error getting access token');
-  }
+    // res.send(`<a href="https://graph.facebook.com/v20.0/${userId}?fields=followers_count%2Cid%2Cusername&access_token=${accessToken}">
+    //   Fetch Details
+    // </a>`)
+  
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

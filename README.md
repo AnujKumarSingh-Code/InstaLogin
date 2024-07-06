@@ -6,11 +6,26 @@ https://justinstople.com/?code=AQDT9NZP5vnwfotY1Y-pYmaAP34GMZ1LRYdtNks2lf0chAb70
 
 
 
+https://beta.instacollabs.com/auth - For callbacks in fb insta setup . 
 
 
 
 
 
+
+
+https://graph.facebook.com/v20.0/8105201049502982
+  ?fields=followers_count%2Cid%2Cusername
+  &access_token=IGQWROOXo0OUh4bFZAnREZAVMkJFZAUpta0NjamwyZAW5ZAcUJDM3Atb2VYaHdkM0RsTkx4Ti02eEVTVk5td3VkYkNpT3JWUWRISFJsQWRDRTJ6dlJDSEhualotb0RRTUpuMERBLXloWElvV185TElrUjlWVnRpWW5sc0U5OV9sUFVUbTlldwZDZD
+
+  <!-- 8105201049502982
+  IGQWROOXo0OUh4bFZAnREZAVMkJFZAUpta0NjamwyZAW5ZAcUJDM3Atb2VYaHdkM0RsTkx4Ti02eEVTVk5td3VkYkNpT3JWUWRISFJsQWRDRTJ6dlJDSEhualotb0RRTUpuMERBLXloWElvV185TElrUjlWVnRpWW5sc0U5OV9sUFVUbTlldwZDZD -->
+
+
+
+
+
+### TEMP 
 
 
 https://www.instagram.com/accounts/login/?force_authentication&platform_app_id=1449305852368766&enable_fb_login&next=https%3A%2F%2Fwww.instagram.com%2Foauth%2Fauthorize%2Fthird_party%2F%3Fclient_id%3D1449305852368766%26redirect_uri%3Dhttp%253A%252F%252Flocalhost%253A5000%252Fauth%252Finstagram%252Fcallback%26scope%3Duser_profile%252Cuser_media%26response_type%3Dcode%26logger_id%3D637e4933-4f0e-4564-85cd-605d4b564e28 
@@ -32,8 +47,8 @@ curl -X POST \
   -F client_id=1449305852368766 \
   -F client_secret=9359f8fd9bc149c363cc09abdde23f5d \
   -F grant_type=authorization_code \
-  -F redirect_uri=https://justinstople.com/ \
-  -F code=AQDPqoOS006HfwiJmI--TMfWm41_bQYltQKC_vmtIDXAQM1P_j5Gji0oe-F-MU-HnifM9Y_754zp6z2TDqncjodJQ3bxa1I66pF95zlWZtovVEEkB2R1SBYz_UZjFinTaf9V6nxVqtLczD_rSx2PSo3f8NUwpjMQ1flIg2rPPBmk9DJ2Uj2EVDbfFNtfkD44QbQW8LQU9opA0yvuhIk_0y-UGi5WOjMCYZi7cRBJ61A46w
+  -F redirect_uri=https://beta.instacollabs.com/auth/ \
+  -F code=AQAoMUMjrZW_cr-MHRhEYImCjRpHJOs05VMwWbbYQl_fWEogJD8MC5qda-u8Ks3bwiBJCJzA-3zIIibwI8ttQhvzjVOW-vag-lcSAsuejs7nTPhDKi7OyPylhD2Fw7YKLfdmRyi6txeSK6awEmBFxm0BprzNvaMJzbiyZ11F89ZeQK2mmnMxY2zcwL1YJoSAgHN7I03Ep0WXk5OgAfw4nfEZVckqwZdZz9LKHgC4ZKRMaQ
 
 
 

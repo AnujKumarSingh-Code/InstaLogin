@@ -1,0 +1,24 @@
+###############################################
+#    Install RESTCLIENT package for VSCODE    #
+###############################################
+
+###
+@ID=7228507833916394
+###
+@ACCESSTOKEN=IGQWRPZAmVrX0ZAyZAzJpbWtFbmROYkF0bFltQXNSUkFmNkVlNXRQcVFsRm1UQk1rWXZAKMlpLWVlRblF5MzRoSU5Ua2RxdHM1RkNjYXJxQU5ZAQWlnelVWclQyUlFITlZAiWHpXU240TjZAxdVRqUEpZAVzFBdGIxemxGcjM2cDV0N1JyajdVZAwZDZD
+
+### User login notification 
+GET https://graph.facebook.com/v20.0/{{ID}}?fields=id&access_token={{ACCESSTOKEN}} HTTP/1.1
+accept: * 
+content-type: application/json
+
+
+### User login notification 
+GET https://graph.instagram.com/me?fields=id,username,account_type,media_coun,mediat&access_token={{ACCESSTOKEN}} HTTP/1.1
+accept: * 
+content-type: application/json
+
+
+
+
+
